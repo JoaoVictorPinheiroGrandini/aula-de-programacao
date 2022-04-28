@@ -1,0 +1,9 @@
+var nomes = ["João", "Alessandro", "Kenzo"]
+var stringConhecem = ""
+for(var indice = 0; indice < nomes.length; indice += 1){
+        stringConhecem = stringConhecem + nomes[indice] 
+        if(indice != nomes.length -1) {
+           stringConhecem = stringConhecem + " conhece "
+        }
+}
+console.log(stringConhecem)
