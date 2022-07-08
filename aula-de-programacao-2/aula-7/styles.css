@@ -1,0 +1,44 @@
+h1 {
+    color:crimson;
+    background-color: rgb(38, 201, 139);
+    border: 20px solid black;
+    border-bottom: 10px solid whitesmoke;
+}
+#botão {
+    padding: 20px;
+    border: 30px solid rgb(32, 32, 215);
+    font-family: monospace;
+    font-size: -webkit-xxx-large;
+    border-radius: 2000px;
+}
+h2 {
+    color:crimson;
+    background-color: rgb(38, 201, 139);
+    border: 20px solid black;
+    border-bottom: 10px solid whitesmoke;
+}h3 {
+    color:crimson;
+    background-color: rgb(38, 201, 139);
+    border: 20px solid black;
+    border-bottom: 10px solid whitesmoke;
+}h4 {
+    color:crimson;
+    background-color: rgb(38, 201, 139);
+    border: 20px solid black;
+    border-bottom: 10px solid whitesmoke;
+}
+h5 {
+    color:crimson;
+    background-color: rgb(38, 201, 139);
+    border: 20px solid black;
+    border-bottom: 10px solid whitesmoke;
+}h6 {
+    color:crimson;
+    background-color: rgb(38, 201, 139);
+    border: 20px solid black;
+    border-bottom: 10px solid whitesmoke;
+}
+p {
+    color:white;
+    background-color: crimson;
+}

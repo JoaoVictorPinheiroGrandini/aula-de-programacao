@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./estilos/style.css">
+</head>
+<body> 
+    <h1>Adicione uma imagem a galeria</h1>
+    <label for="titulo">Titulo</label>
+    <input type="text" id="titulo" name="titulo">
+    <br>
+    <br>
+                     
+    <label for="endereco">Endereço</label>
+    <input type="text" id="endereco" name="endereco">
+    <br>
+    <br>
+    <button id="adicionarImagem">Adicionar</button>
+    <!--<div class="posicionamento">
+        <div>um</div>
+        <div>dois</div>
+        <div>três</div>
+        <div>quatro</div>
+    </div>
+    <div class="posicionamento2">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+        <div>G</div>
+        <div>H</div>
+    </div>-->
+    <div id="galeria">
+      
+    </div>
+   <script>
+       function adicionarUmaImagem() {
+           var titulo = window.document.getElementById("titulo").value
+            var endereco = window.document.getElementById("endereco").value
+
+            var novaDiv = window.document.createElement("div")
+            var novoCabecalho = window.document.createElement("h5")
+            var novaImagem = window.document.createElement("img")
+
+            novoCabecalho.innerText = titulo
+            novaImagem.src = endereco
+            novaImagem.classList.add("imagens")
+            novaDiv.classList.add("conteiner")
+
+            novaDiv.appendChild(novoCabecalho)
+            novaDiv.appendChild(novaImagem)
+
+            var galeria = window.document.getElementById("galeria")
+
+            galeria.appendChild(novaDiv)
+             
+
+       }
+
+       var botao = window.document.getElementById("adicionarImagem")
+       botao.addEventListener("click", adicionarUmaImagem)
+   </script>
+
+</body>
+</html>

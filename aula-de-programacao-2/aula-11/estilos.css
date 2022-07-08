@@ -1,0 +1,39 @@
+.conteiner {
+     display: grid;
+     
+}
+
+.cards {
+   
+    box-shadow: 3px 3px lightgray;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.conteinerImg {
+    background-color: blueviolet;
+    height: 122px;
+    width: 120px;
+    border-top-right-radius: 30%;
+    border-bottom-right-radius: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.conteinerImg > img {
+    height: 100px;
+}
+
+.texto {
+    flex-direction: column;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+.titulo {
+    font-size: 20px;
+    font-weight: bold;
+}
+

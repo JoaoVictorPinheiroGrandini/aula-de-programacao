@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+<body>
+    <div id="conteiner"></div>
+    <script>
+        var itens =[{
+            titulo:"One piece",
+            endereco:"https://www.einerd.com.br/wp-content/uploads/2019/09/One-Piece-capa-890x466.png",
+            descricao:"tripulação do chapeu de palha"
+        },{
+            titulo:"One piece",
+            endereco:"https://www.einerd.com.br/wp-content/uploads/2019/09/One-Piece-capa-890x466.png",
+            descricao:"tripulação do chapeu de palha"
+        },{
+            titulo:"One piece",
+            endereco:"https://www.einerd.com.br/wp-content/uploads/2019/09/One-Piece-capa-890x466.png",
+            descricao:"tripulação do chapeu de palha"
+        }, {
+            titulo:"One piece",
+            endereco:"https://www.einerd.com.br/wp-content/uploads/2019/09/One-Piece-capa-890x466.png",
+            descricao:"tripulação do chapeu de palha"
+        },{
+            titulo:"One piece",
+            endereco:"https://www.einerd.com.br/wp-content/uploads/2019/09/One-Piece-capa-890x466.png",
+            descricao:"tripulação do chapeu de palha"
+        },{
+            titulo:"One piece",
+            endereco:"https://www.einerd.com.br/wp-content/uploads/2019/09/One-Piece-capa-890x466.png",
+            descricao:"tripulação do chapeu de palha"
+        }]
+
+        for(var indice = 0; indice < itens.length; indice += 1){
+            var novaDiv = window.document.createElement("div")
+            var novoCabecalho = window.document.createElement("h5")
+            var novaImagem = window.document.createElement("img")
+            var novoparagrafo =window.document.createElement("p")
+
+            var item = itens[indice]
+            novoCabecalho.innerText = item.titulo
+            novaImagem.src = item.endereco
+            novaImagem.width = "280"
+            novoparagrafo.innerText = item.descricao
+            novaDiv.classList.add("conteinerInterno")
+            
+            novaDiv.appendChild(novoCabecalho)
+            novaDiv.appendChild(novaImagem)
+            novaDiv.appendChild(novoparagrafo)
+            
+            var galeria = window.document.getElementById("conteiner")
+
+            galeria.appendChild(novaDiv)
+ 
+        }
+        </script>
+    
+</body>
+</html>

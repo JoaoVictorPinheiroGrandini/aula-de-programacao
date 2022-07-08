@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petralhada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h6 style="color:aquamarine;background-color:red;text-align:center";>
+        Petralhada tá maluca
+    </h6>
+    <h5>
+        Petralhada tá maluca
+    </h5>
+    <h4>
+        Petralhada tá maluca
+    </h4>
+    <h3>
+        Petralhada tá maluca
+    </h3>
+    <h2>
+        Petralhada tá maluca
+    </h2>
+    <div id="Petralha maior">
+        <h1>
+            Petralhada tá maluca
+        </h1>
+    </div>
+    <p style="color:aquamarine;background-color:red;text-align:center";>
+        <i> Petralha</i> - Significado: Referência pejorativa aos membros do Partido dos Trabalhadores (PT) <br/>, em alusão aos Irmãos Metralha
+    </p>
+    <img src="anime-one-piece-going-merry-one-piece-wallpaper-preview.jpg" alt="One piece merry">
+    <br>
+    <img width="200" height="499" src= https://www.socialistamorena.com.br/wp-content/uploads/2015/12/petralha-1800x1200-e1545328184514.jpg>
+    <ol type="i">
+        <li>
+            maça
+        </li>
+        <li>
+            tangerina
+        </li>
+        <li>
+            laranja
+        </li>
+    </ul>
+    <ul type="circle">
+        <li>
+            maça
+        </li>
+        <li>
+            tangerina
+        </li>
+        <li>
+            laranja
+        </li>
+    </ul>
+    <a href="https://github.com/JoaoVictorPinheiroGrandini/aula-de-programacao">Meu github</a>
+    <a href="pagina.html">Outra pagina</a>
+    <button id="butão">clique para exterminar petralhas</button>
+    <br>
+    <button id="botão">trocar imagem</button>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO4-WFJE_ZSJ6uz8Vtq_6lKDtZtaRqPv2I3w&usqp=CAU" alt="Luffy" id="imagem1">
+    <img src="https://i.pinimg.com/474x/8b/ee/9a/8bee9a0f5485ac940546c6009bfb679e.jpg" alt="A paz nunca foi uma opção" id="imagem2">
+     
+    <!--A tag script deve ser o ultimo elemento do body-->
+    <script>
+        var botao = window.document.getElementById("butão")
+        var numeroDePetralhas = 0
+        botao.addEventListener("click", function(){
+                numeroDePetralhas = numeroDePetralhas + 1
+                window.alert(numeroDePetralhas)
+        })
+        var imagem = window.document.getElementById("imagem1")
+        var imagem2 = window.document.getElementById("imagem2")
+        function trocarImagem(){
+               if(imagem2.style.visibility == "hidden") {
+                    imagem.style.visibility = "hidden";
+                    imagem2.style.visibility = "visible"
+                }else{
+                    imagem.style.visibility = "visible";
+                    imagem2.style.visibility = "hidden"
+                }
+                
+        }
+        var botao = window.document.getElementById("botão")
+        imagem2.style.visibility = "hidden"
+        botao.addEventListener("click", trocarImagem)
+        imagem.addEventListener("click",trocarImagem)
+        imagem2.addEventListener("click",trocarImagem)
+        
+    </script>
+</body>
+</html>
