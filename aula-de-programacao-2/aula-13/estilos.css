@@ -1,0 +1,164 @@
+.conteiner {
+   display: grid;
+   width: 500px;
+}
+.header{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   height: 50px;
+   width: 480px;
+   align-items: center;
+   padding-left: 10px;
+   padding-right: 10px;
+   background-color: blueviolet;
+}
+.usuarioEsquerdo {
+ height: 10px;
+ width: 10px;
+ border: solid 15px violet;
+ background-color: violet;
+ border-radius: 100%;
+ margin-left: 20px;
+}
+.caixaHeaderDireita {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+.caixaHeaderDireita > div {
+   height: 10px;
+ width: 10px;
+ border: solid 15px violet;
+ background-color: violet;
+ border-radius: 100%;
+ margin: 5px;
+}
+.headerBaixo {
+   background-color: blueviolet;
+   height: 100px;
+   width: 500px;
+}
+.mensagemOla {
+   margin-block-start: 60px;
+   margin-left: 35px;
+   font-size: 20px;
+}
+.center {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: auto;
+}
+.centerCima {
+margin-top: 30px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+}
+.conta {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   font-size: 20px;
+   margin-left:  35px;
+}
+.centerBaixo {
+   display: flex;
+   flex-direction: row;
+   margin-top: 30px;
+}
+ .caixasRedondas {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   text-align: center;
+ }
+ .caixasRedondas > div {
+   height: 20px;
+   width: 20px;
+   border: solid 15px lightgray;
+   background-color: lightgray;
+   border-radius: 100%;
+   margin-left: 20px;
+   marg
+   
+ }
+ .caixasRedondas > p {
+   margin-left: 20px;
+   margin-top: 10px;
+ }
+.meusCartoes {
+   border: solid 1px lightgray;
+   width: 410px;
+   background-color: lightgray;
+   margin: 35px;
+   height: 40px;
+   border-radius: 15px;
+   padding: 10px;
+   margin-bottom: 15px;
+}
+.seguroDeVida {
+   border: solid 1px lightgray;
+   width: 350px;
+   background-color: lightgray;
+   margin-left: 35px;
+   margin-top: 15px;
+   height: 70px;
+   border-radius: 15px;
+   padding: 10px; 
+}
+.meusCartoes > p {
+   margin: 10px;
+margin-left: 45px;
+}
+
+.seguroDeVida > p {
+   margin-left: 15px;
+}
+.linha {
+   border: solid 1px lightgray;
+   margin:30px;
+   margin-bottom:10 ;
+}
+.cartao {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   height: 100px;
+   margin: 35px;
+   margin-top: 5px;
+}
+.cartao > div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 20px
+}
+.caixaGrande {
+   border: solid 1px lightgray;
+   width: 270px;
+   background-color: lightgray;
+   margin-left: 35px;
+   margin-top: 15px;
+   height: 340px;
+   border-radius: 15px;
+   padding: 10px; 
+}
+.portabilidade {
+   margin-top: 150px;
+}
+.conhecer {
+   border: solid 1px blueviolet;
+   background-color: blueviolet;
+   border-radius: 40px;
+   margin: 35px;
+   margin-top: 5px;
+   width: 110px;
+   height: 35px;
+   text-align: center;
+   padding-bottom: 15px;
+}
+

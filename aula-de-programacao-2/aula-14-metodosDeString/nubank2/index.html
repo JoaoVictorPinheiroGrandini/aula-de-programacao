@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nubank</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div class="conteiner">
+        <div class="header">
+            <img src="seta.png" alt="seta para esquerda" class="imagem">
+            <img src="interrogacao.png" class="imagem">
+        </div>
+        <h1>Histórico</h1>
+        <div class="caixaDeBusca">
+            <button class="botaoLupa"><img src="lupa.png" alt="lupa" class="imagem lupa"></button>
+            
+            <input type="text" class="buscar" name="Buscar" placeholder="Buscar" id="busca">
+        </div>
+        <div id="lista">
+            <!-- <div class="caixaDoDinheiro">
+                <div class="caixaDaImagemEDoTexto">
+                    <div class="conteinerDaImagemDoDinheiro">
+                        <img src="dinheiroBaixo.png" class="imagem">
+                    </div>
+                    <div class="textoDoDinheiro">
+                            <h3>Transferência recebida</h3>
+                        <span>DOUGLAS PIRES BRANTES</span> 
+                        <span>R$ 12,50</span>   
+                    </div>
+                </div>
+                <span class="spanHoje">Hoje</span>
+            </div> -->
+        </div>
+    </div>
+    <script>
+        var transacoes = [
+            {
+                tipo: "Transferência recebida",
+                nome: "DOUGLAS PIRES BRANTES",
+                valor: "R$ 12,50",
+                data: "Hoje",
+                icone: "dinheiroBaixo.png"
+            },
+            {
+                tipo: "Transferência enviada",
+                nome: "Lucas Muniz Formoso",
+                valor: "R$ 21,50",
+                data: "Ontem",
+                icone: "setaCima.png"
+            },
+            {
+                tipo: "Transferência recebida",
+                nome: "MARCIO MADEIRA DA CUNHA",
+                valor: "R$ 38,50",
+                data: "21/05/22",
+                icone: "dinheiroBaixo.png"
+            },
+            {
+                tipo: "Compra no débito",
+                nome: "Tutti Fruti",
+                valor: "R$ 19,98",
+                data: "22/07/21",
+                icone: "cartao.png"
+            },
+            {
+                tipo: "Compra no crédito",
+                nome: "Art Pão",
+                valor: "R$ 38,60",
+                data: "Ontem",
+                icone: "cartao.png"
+            }
+        ]
+
+        function criarCardDeTransacao(transacao) {
+            var imagem = window.document.createElement("img")
+            imagem.classList.add("imagem")
+            imagem.src = transacao.icone
+
+            var caixaImg = window.document.createElement("div")
+            caixaImg.classList.add("conteinerDaImagemDoDinheiro")
+
+            caixaImg.appendChild(imagem)
+
+            var tipo = window.document.createElement("h3")
+            tipo.innerText = transacao.tipo
+
+            var nome = window.document.createElement("span")
+            nome.innerText = transacao.nome
+
+            var valor = window.document.createElement("span")
+            valor.innerText = transacao.valor
+
+            var caixaTexto = window.document.createElement("div")
+            caixaTexto.classList.add("textoDoDinheiro")
+
+            caixaTexto.appendChild(tipo)
+            caixaTexto.appendChild(nome)
+            caixaTexto.appendChild(valor)
+
+            var caixa = window.document.createElement("div")
+            caixa.classList.add("caixaDaImagemEDoTexto")
+
+            caixa.appendChild(caixaImg)
+            caixa.appendChild(caixaTexto)
+
+            var conteiner = window.document.createElement("div")
+
+            var data = window.document.createElement("span")
+            data.classList.add("spanHoje")
+            data.innerText = transacao.data
+            
+            conteiner.classList.add("caixaDoDinheiro")
+            
+
+            conteiner.appendChild(caixa)
+            conteiner.appendChild(data)
+
+            var lista = window.document.getElementById("lista")
+            lista.appendChild(conteiner)
+
+        }
+        /* criarCardDeTransacao({
+            tipo: "Transferência recebida",
+            nome: "DOUGLAS PIRES BRANTES",
+            valor: "R$ 12,50",
+            data: "Hoje",
+            icone: "dinheiroBaixo.png"
+        }) */
+        function criarListaDeTransacoes(lista) {
+            for(var indice = 0; indice < lista.length ; indice += 1){
+                criarCardDeTransacao(lista[indice])
+            }
+        }
+
+        criarListaDeTransacoes(transacoes)
+
+        
+        function filtrarTransacoes() {
+            var busca = window.document.getElementById("busca").value
+
+            var filtradas = []
+            
+            for(var indice = 0; indice < transacoes.length; indice += 1){
+                var buscaToLowerCase = busca.toLowerCase();
+                var tipo = transacoes[indice].tipo.toLowerCase();
+
+                if(tipo.includes(buscaToLowerCase)) {
+                    filtradas.push(transacoes[indice])
+                }
+            }
+            var conteiner =  window.document.getElementById("lista")
+            conteiner.innerHTML = ""
+            criarListaDeTransacoes(filtradas)
+        }
+        var lista = window.document.getElementsByClassName("botaoLupa")
+        var lupa = lista[0]            
+        lupa.addEventListener("click", filtrarTransacoes)
+       // console.log( "Botão: ", lista)
+
+    </script>
+</body>
+
+</html>
