@@ -147,7 +147,23 @@
 
         criarListaDeTransacoes(transacoes)
 
-        
+        function tirarAcentos(str){
+                str = str.replace(/[ÀÁÂÃÄÅ]/,"A");
+                str = str.replace(/[àáâãäå]/,"a");
+                str = str.replace(/[ÈÉÊË]/,"E");
+                str = str.replace(/[èéêë]/,"e");
+                str = str.replace(/[Ç]/,"C");
+                str = str.replace(/[ç]/,"c");
+                str = str.replace(/[ÍÌÏÎ]/,"I")
+                str = str.replace(/[íìïî]/,"i")
+                str = str.replace(/[ÒÓÔÖÕ]/,"O")
+                str = str.replace(/[óòõöô]/,"o")
+                str = str.replace(/[ÙÚÛÜ]/,"U")
+                str = str.replace(/[úùüû]/,"u")
+
+                return str.replace(/[^a-z0-9]/gi,''); 
+            } 
+
         function filtrarTransacoes() {
             var busca = window.document.getElementById("busca").value
 
@@ -161,6 +177,7 @@
                     filtradas.push(transacoes[indice])
                 }
             }*/
+             
             function existeNaLista(filtradas, item){
                 var encontrado = filtradas.find(function(item2){
                     if(item2.id == item.id ) {
@@ -178,9 +195,12 @@
             transacoes.forEach(
                 function(item) {
                     var buscaToLowerCase = busca.toLowerCase();
+                    buscaToLowerCase = tirarAcentos(buscaToLowerCase)
                     var tipo = item.tipo.toLowerCase();
+                    tipo = tirarAcentos(tipo)
 
                     var nome = item.nome.toLowerCase();
+                    nome = tirarAcentos(nome)
 
                     var valor = item.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 
@@ -207,6 +227,7 @@
         var lupa = lista[0]            
         lupa.addEventListener("click", filtrarTransacoes)
        // console.log( "Botão: ", lista)
+       console.log(tirarAcentos("joão"))
 
     </script>
 </body>
