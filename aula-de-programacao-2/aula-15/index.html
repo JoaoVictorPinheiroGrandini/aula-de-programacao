@@ -50,7 +50,7 @@
             },
             {
                 tipo: "Transferência enviada",
-                nome: "DOUGLAS PIRES BRANTES",
+                nome: "João Perpétuo",
                 valor: 21.50,
                 data: "Ontem",
                 icone: "setaCima.png",
@@ -58,7 +58,7 @@
             },
             {
                 tipo: "Transferência recebida",
-                nome: "MARCIO MADEIRA DA CUNHA",
+                nome: "Mércio Madeira Perpétuo",
                 valor: 38.50,
                 data: "21/05/22",
                 icone: "dinheiroBaixo.png",
@@ -148,21 +148,24 @@
         criarListaDeTransacoes(transacoes)
 
         function tirarAcentos(str){
-                str = str.replace(/[ÀÁÂÃÄÅ]/,"A");
-                str = str.replace(/[àáâãäå]/,"a");
-                str = str.replace(/[ÈÉÊË]/,"E");
-                str = str.replace(/[èéêë]/,"e");
-                str = str.replace(/[Ç]/,"C");
-                str = str.replace(/[ç]/,"c");
-                str = str.replace(/[ÍÌÏÎ]/,"I")
-                str = str.replace(/[íìïî]/,"i")
-                str = str.replace(/[ÒÓÔÖÕ]/,"O")
-                str = str.replace(/[óòõöô]/,"o")
-                str = str.replace(/[ÙÚÛÜ]/,"U")
-                str = str.replace(/[úùüû]/,"u")
+            str = str.replaceAll(/[ÀÁÂÃÄÅ]/g,"A");
+            str = str.replaceAll(/[àáâãäå]/g,"a");
+            str = str.replaceAll(/[ÈÉÊË]/g,"E");
+            str = str.replaceAll(/[èéêë]/g,"e");
 
-                return str.replace(/[^a-z0-9]/gi,''); 
-            } 
+            console.log("str: ", str)
+
+            str = str.replaceAll(/[Ç]/g,"C");
+            str = str.replaceAll(/[ç]/g,"c");
+            str = str.replaceAll(/[ÍÌÏÎ]/g,"I")
+            str = str.replaceAll(/[íìïî]/g,"i")
+            str = str.replaceAll(/[ÒÓÔÖÕ]/g,"O")
+            str = str.replaceAll(/[óòõöô]/g,"o")
+            str = str.replaceAll(/[ÙÚÛÜ]/g,"U")
+            str = str.replaceAll(/[úùüû]/g,"u")
+
+            return str 
+        } 
 
         function filtrarTransacoes() {
             var busca = window.document.getElementById("busca").value
@@ -192,20 +195,40 @@
                 }
                 return true
             }
-            transacoes.forEach(
-                function(item) {
-                    var buscaToLowerCase = busca.toLowerCase();
-                    buscaToLowerCase = tirarAcentos(buscaToLowerCase)
-                    var tipo = item.tipo.toLowerCase();
-                    tipo = tirarAcentos(tipo)
+            transacoes.forEach(function(item) {
+                var jaInseridoEmFiltrados = false
+                
+                var buscaToLowerCase = busca.toLowerCase();
+                buscaToLowerCase = tirarAcentos(buscaToLowerCase)
+                
+                var tipo = item.tipo.toLowerCase();
+                tipo = tirarAcentos(tipo)
 
-                    var nome = item.nome.toLowerCase();
-                    nome = tirarAcentos(nome)
+                var nome = item.nome.toLowerCase();
+                nome = tirarAcentos(nome)
 
-                    var valor = item.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+                var valor = item.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
 
+                console.log("nome : ",nome)
+                console.log("valor : ",valor)
+                console.log("tipo : ",tipo)
+            
 
-                    if(tipo.includes(buscaToLowerCase)) {
+                if (tipo.includes(busca)) {
+                    filtradas.push(item)
+                    jaInseridoEmFiltrados = true
+                }
+
+                if (nome.includes(busca) && !jaInseridoEmFiltrados) {
+                    filtradas.push(item)
+                    jaInseridoEmFiltrados = true
+                }
+
+                if (valor.includes(busca) && !jaInseridoEmFiltrados) {
+                    filtradas.push(item)
+                }
+            })
+                    /* if(tipo.includes(buscaToLowerCase)) {
                         filtradas.push(item)
                     }
                       
@@ -215,10 +238,10 @@
 
                     if(valor.includes(buscaToLowerCase) && !existeNaLista(filtradas, item)) {
                         filtradas.push(item)
-                    }
-                }
+                    } */
+                
 
-            )
+            
             var conteiner =  window.document.getElementById("lista")
             conteiner.innerHTML = ""
             criarListaDeTransacoes(filtradas)
