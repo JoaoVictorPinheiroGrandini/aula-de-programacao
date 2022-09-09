@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>  
+    <div class="conteiner">
+        <div class="caixaMae">
+            <div class="item linhaCima colunaUm">
+                <input type="text" class="inputs" id="a1">
+            </div>
+
+            <div class="item linhaCima">
+                <input type="text" class="inputs" id="a2">
+            </div>
+
+            <div class="item linhaCima colunaTres">
+                <input type="text" class="inputs" id="a3">
+            </div>
+
+            <div class="item colunaUm">
+                <input type="text" class="inputs" id="b1">
+            </div>
+
+            <div class="item">
+                <input type="text" class="inputs" id="b2">
+            </div>
+
+            <div class="item colunaTres">
+                <input type="text" class="inputs " id="b3">
+            </div>
+
+            <div class="item linhaBaixo colunaUm">
+                <input type="text" class="inputs" id="c1">
+            </div>
+
+            <div class="item linhaBaixo">
+                <input type="text" class="inputs" id="c2">
+            </div>
+
+            <div class="item linhaBaixo colunaTres">
+                <input type="text" class="inputs " id="c3">
+            </div>
+        </div>
+        <button id="button">verificar</button>
+    </div>
+    <script>
+        function verificarVencedor(a1, a2, a3, b1, b2, b3, c1, c2, c3) {
+            if (a1 != "" && a1 == a2 && a1 == a3) {
+                return a1
+            }
+            
+            if (b1 != "" && b1 == b2 && b1 == b3) {
+                return b1
+            }
+            
+            if (c1 != "" && c1 == c2 && c1 == c3) {
+                return c1
+            }
+            
+            if (a1 != "" && a1 == b1 && a1 == c1) {
+                return a1
+            }
+            
+            if (a2 != "" && a2 == b2 && a2 == c2) {
+                return a2
+            }
+            
+            if (a3 != "" && a3 == b3 && a3 == c3) {
+                return a3
+            }
+            
+            if (b2 != "" && a1 == b2 && a1 == c3) {
+                return a1
+            }
+            
+            if (a3 != "" && a3 == b2 && a3 == c1) {
+                return a3
+            }
+
+            return undefined
+        }
+
+        function mostrarVencedor(){
+            var a1 = window.document.getElementById("a1").value
+            var a2 = window.document.getElementById("a2").value
+            var a3 = window.document.getElementById("a3").value
+            var b1 = window.document.getElementById("b1").value
+            var b2 = window.document.getElementById("b2").value
+            var b3 = window.document.getElementById("b3").value
+            var c1 = window.document.getElementById("c1").value
+            var c2 = window.document.getElementById("c2").value
+            var c3 = window.document.getElementById("c3").value
+            
+            var vencedor = verificarVencedor(a1, a2, a3, b1, b2, b3, c1, c2, c3)
+
+            console.log(vencedor)
+            if(vencedor == "x" || vencedor == "o"){
+                if (vencedor != undefined){
+                    window.alert(vencedor +" é o vencedor")
+                }
+            } else {
+                window.alert("coloque um valor de x ou o")
+            }
+                
+        }
+
+        var botao = window.document.getElementById("button")
+        botao.addEventListener("click", mostrarVencedor)
+            
+
+    </script>
+</body>
+</html>
